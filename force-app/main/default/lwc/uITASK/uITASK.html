@@ -1,0 +1,133 @@
+<!-- pricing.html -->
+<template>
+    <div class="slds-container_center slds-p-around_medium">
+        <div class="slds-text-align_center">
+            <span class="slds-badge slds-badge_inverse slds-theme_info slds-m-bottom_small">Pricing</span>
+            <h1 class="slds-text-heading_large slds-m-top_small slds-m-bottom_small">Pay once, use forever in countless projects</h1>
+            <p class="slds-text-body_regular slds-text-color_weak slds-m-bottom_large">We offer a very simple and transparent pricing model.</p>
+        </div>
+
+        <div class="slds-grid slds-wrap slds-gutters slds-grid_align-center">
+            <template for:each={pricingPlans} for:item="plan">
+                <div key={plan.id} class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12 slds-p-around_small">
+                    <article class="slds-card slds-p-around_medium">
+                        <div class="slds-text-align_center">
+                            <h2 class="slds-text-heading_medium slds-m-bottom_x-small">{plan.name}</h2>
+                            <div class="slds-text-heading_large slds-m-bottom_small">{plan.price}</div>
+                            <p class="pclass slds-text-body_small slds-text-color_weak slds-m-bottom_medium">{plan.description}</p>
+                        </div>
+
+                        <ul class="slds-list_vertical slds-m-bottom_medium">
+                            <template for:each={plan.features} for:item="feature">
+                                <li key={feature} class="slds-item slds-p-bottom_x-small">
+                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                        <lightning-icon 
+                                            icon-name="utility:check" 
+                                            size="xx-small"
+                                            variant="success" 
+                                            class="slds-icon-text-success slds-m-right_x-small">
+                                        </lightning-icon>
+                                        <span class="slds-text-body_small">{feature}</span>
+                                    </div>
+                                </li>
+                                
+                            </template>
+                        </ul>
+
+                        <div class="slds-text-align_center slds-grid slds-grid_vertical">
+                            <div class="slds-col slds-size_full">
+                                <button class="slds-button slds-button_brand button-stretch button" 
+                                title={plan.buttonLabel}
+                                onclick={handleClick}
+                                >{plan.buttonLabel}</button>
+                                <!-- <button >
+                                    variant= {plan.buttonVariant}
+                                    label= {plan.buttonLabel}
+                                    title={plan.buttonLabel}
+                                    onclick={handleClick}
+                                    class="button-stretch button  slds-m-bottom_large">
+                                </button>  -->
+                            </div>
+
+                            <div class="slds-grid slds-grid_align-center slds-grid_vertical-align-center slds-text-body_small slds-text-color_weak slds-m-top_small">
+                                 <!-- <lightning-icon  
+                                    icon-name="utility:preview" 
+                                    size="xx-small"
+                                    class="slds-m-right_xx-small">
+                                    </lightning-icon> -->
+                               
+                                <!-- <button class="slds-button slds-button_outline-brand" 
+                                alternative-text="Preview" 
+                                size="xx-small"  onclick={openModal}>
+                                <lightning-icon icon-name="utility:preview alternative-text="Preview" title="Preview"></lightning-icon>                           
+                                </button> -->
+
+                                <lightning-button 
+                                icon-name="utility:preview" 
+                                label="Preview"  
+                                alternative-text="Preview" 
+                                size="xx-small"
+                                 class="slds-m-right_xx-small" 
+                                 onclick={openModal}></lightning-button> 
+                                <!-- Preview -->
+                                <template if:true={isModalOpen}>
+                                    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                                        <div class="slds-modal__container">
+                                            <header class="slds-modal__header">
+                                                <lightning-button-icon 
+                                                    icon-name="utility:close" 
+                                                    alternative-text="Close" 
+                                                    onclick={closeModal}
+                                                    class="slds-modal__close">
+                                                </lightning-button-icon>
+                                                <h2 class="slds-text-heading_medium slds-hyphenate">Union UI Welcome</h2>
+                                            </header>
+                                            <div class="slds-modal__content slds-p-around_medium">
+                                                <div class="leftl">
+                                                <div class="container">
+                                                    <div class="section">
+                                                        <h1>Hi, it's Vladimir <span>👋</span></h1>
+                                                        <h2>Thank you for your support!</h2>
+                                                        <p>Thank you for exploring Union UI! After more than <span class="highlight">six months of dedicated effort</span>, we've <span class="highlight">meticulously developed this UI kit</span>, confident it will meet your needs. We're incredibly grateful for the enthusiastic support and are excited to keep enhancing Union UI with the newest Figma features.</p>
+                                                    </div>
+                                                    <div class="section">
+                                                        <h2>Feedback and support</h2>
+                                                        <p>If you find an issue with the design system, have a question, or want to provide feedback, please reach out to us via <a href="#" onclick={sendEmail} class="email-link">info@maddesign.io</a></p>
+                                                    </div>
+                                                    <div class="section">
+                                                        <h2>New release and updates</h2>
+                                                        <p>Please keep in mind that we're consistently working on new updates and releases, so stay tuned via our social media to keep in touch. If you purchased PRO or TEAM license, you have lifetime free updates.</p>
+                                                    </div>
+                                                    <div class="section">
+                                                        <h2>How to make the most of this design system?</h2>
+                                                        <p>Union UI should be the starting point for every design project. Duplicate the file, connect it to your project, tailor it as you need and witness the glory! However we do encourage you to explore the system first as we have used a few advanced and more modern techniques to achieve the scalability we intended.</p>
+                                                    </div>
+                                                    <div class="section">
+                                                        <h2><strong>Help us improve</strong></h2>
+                                                        <p>Please share Union UI on social media.The more support we get, the more time and resources we can spend on making Union UI even better, with free updates for life.</p>
+                                                        <h3 class="slds-text-heading_medium"><u>Leave a Review</u></h3>
+                                                        <br></br>
+                                                        <ul class="social-links">
+                                                        <template for:each={socialLinks} for:item="link">
+                                                            <li key={link.platform}>
+                                                                <i class={link.iconClass}></i>
+                                                                <a href={link.url}>Follow on {link.platform}</a>
+                                                            </li>
+                                                        </template>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <div class="slds-backdrop slds-backdrop_open"></div>
+                                </template>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

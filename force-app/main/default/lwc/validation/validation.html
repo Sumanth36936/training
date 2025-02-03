@@ -1,0 +1,142 @@
+<template>
+    <div class="slds-box slds-theme_default form-container">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label" for="fullName">Full Name</label>
+          <div class="slds-form-element">
+            <input 
+              class="slds-input" 
+              type="text" 
+              id="fullName" 
+              name="fullName" 
+              onchange={handleInputChange} 
+            />
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.fullName}>{errors.fullName}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label" for="userEmail">Email Address</label>
+          <div class="slds-form-element">
+            <input 
+              class="slds-input" 
+              type="text" 
+              id="userEmail" 
+              name="userEmail" 
+              onchange={handleInputChange} 
+            />
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.userEmail}>{errors.userEmail}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label" for="userPhone">Phone Number</label>
+          <div class="slds-form-element">
+            <input 
+              class="slds-input" 
+              type="text" 
+              id="userPhone" 
+              name="userPhone" 
+              onchange={handleInputChange} 
+            />
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.userPhone}>{errors.userPhone}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label" for="userRegistration">Registration ID</label>
+          <div class="slds-form-element">
+            <input 
+              class="slds-input" 
+              type="text" 
+              id="userRegistration" 
+              name="userRegistration" 
+              onchange={handleInputChange} 
+            />
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.userRegistration}>{errors.userRegistration}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label" for="userBio">Bio</label>
+          <div class="slds-form-element">
+            <textarea 
+              class="slds-textarea" 
+              id="userBio" 
+              name="userBio" 
+              onchange={handleInputChange}
+            ></textarea>
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.userBio}>{errors.userBio}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label">Gender</label>
+          <div class="slds-form-element">
+            <div class="slds-form-element__control">
+              <input 
+                type="radio" 
+                id="male" 
+                name="gender" 
+                value="male" 
+                onchange={handleInputChange} 
+              />
+              <label for="male">Male</label>
+              <input 
+                type="radio" 
+                id="female" 
+                name="gender" 
+                value="female" 
+                onchange={handleInputChange} 
+              />
+              <label for="female">Female</label>
+            </div>
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.gender}>{errors.gender}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+          <label class="slds-form-element__label">Interests</label>
+          <div class="slds-form-element">
+            <div class="slds-form-element__control">
+              <input 
+                type="checkbox" 
+                id="tech" 
+                name="interests" 
+                value="tech" 
+                onchange={handleInputChange} 
+              />
+              <label for="tech">Technology</label>
+              <input 
+                type="checkbox" 
+                id="fitness" 
+                name="interests" 
+                value="fitness" 
+                onchange={handleInputChange} 
+              />
+              <label for="fitness">Fitness</label>
+              <input 
+                type="checkbox" 
+                id="traveling" 
+                name="interests" 
+                value="traveling" 
+                onchange={handleInputChange} 
+              />
+              <label for="traveling">Traveling</label>
+            </div>
+            <div class="slds-text-color_error slds-m-top_xx-small" if:true={errors.interests}>{errors.interests}</div>
+          </div>
+        </div>
+  
+        <div class="slds-col slds-size_1-of-1">
+          <button 
+            class="slds-button slds-button_brand" 
+            onclick={handleSubmit}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </template>
+  

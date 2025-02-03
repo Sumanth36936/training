@@ -1,0 +1,13 @@
+.form-container {
+    background-color: #eb801c;
+    border-radius: 8px;
+    border: 1px solid #191212;
+}
+ 
+.slds-button_neutral{
+    background-color: skyblue;
+    border: none;
+}
+.slds-button_neutral:hover{
+    background-color: rgb(10, 28, 196);
+}

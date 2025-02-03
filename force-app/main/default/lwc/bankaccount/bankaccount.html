@@ -1,0 +1,152 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-p-around_medium header">
+            <div class="slds-text-heading_medium slds-text-color_inverse">Standard Bank International</div>
+        </div>
+ 
+        <div class=" slds-p-around_medium">
+            <nav role="navigation" aria-label="Breadcrumbs">
+                <ol class="slds-breadcrumb">
+                    <li>
+                        <a href="#"  class="slds-text-link">Home</a>
+                        <span class="slds-p-horizontal_x-small" aria-hidden="true">&gt;</span>
+                        <a href="#"  class="slds-text-link">Our Products & Services</a>
+                        <span class="slds-p-horizontal_x-small" aria-hidden="true">&gt;</span>
+                        <a href="#"  class="slds-text-link">Pre-application</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+                <span class="slds-text-heading_small">Opening your account</span>
+                <span class="slds-text-body_small">10% complete</span>
+            </div>
+            <div class="slds-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10">
+                <span class="slds-progress-bar__value" style="width: 10%"></span>
+            </div>
+        </div>
+
+        <!-- Account Type Header -->
+        <div class="slds-p-around_medium">
+            <h2 class="slds-text-heading_medium">Optimum Bank Account</h2>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="slds-tabs_default slds-tabs_medium">
+            <ul class="slds-tabs_default__nav slds-grid slds-wrap" role="tablist">
+                <li class="slds-tabs_default__item slds-is-active slds-size_1-of-1 slds-medium-size_1-of-5" title="Eligibility" role="presentation">
+                    <a class="slds-tabs_default__link" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">
+                        1. Eligibility
+                    </a>
+                </li>
+            <li class="slds-tabs_default__item slds-size_1-of-1 slds-medium-size_1-of-5" title="Item Two" role="presentation">
+            <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">2. Personal Details</a>
+            </li>
+            <li class="slds-tabs_default__item slds-size_1-of-1 slds-medium-size_1-of-5" title="Item Three" role="presentation">
+            <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">3. Contact Details</a>
+            </li>
+            <li class="slds-tabs_default__item slds-size_1-of-1 slds-medium-size_1-of-5" title="Item Two" role="presentation">
+            <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-4__item">4. Address Details</a>
+            </li>
+            <li class="slds-tabs_default__item slds-size_1-of-1 slds-medium-size_1-of-5" title="Item Two" role="presentation">
+            <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-5__item">5. Account Details</a>
+            </li>
+            </ul>
+        </div>
+
+        <!-- Form Section -->
+        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+            <!-- Left Side - Image -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-large-size_5-of-12 slds-p-bottom_medium">
+                <div class="slds-box slds-box_x-small slds-theme_default">
+                    <img src={businessTeamImage} alt="Business Team" class="slds-size_full" />
+                </div>
+            </div>
+
+            <!-- Right Side - Form -->
+            <div class="slds-col slds-size_7-of-12 ">
+                <h2 class="slds-p-bottom--small">Your Eligibility</h2>
+                 <div class="slds-p-bottom--small">
+                    
+                     <lightning-combobox
+                     label="Country of nationality"
+                         name="nationality"
+                         value={nationality}
+                         options={nationalityOptions}
+                         onchange={handleNationalityChange}>
+                     </lightning-combobox>
+                 </div>
+                 <div class="slds-p-bottom--small">
+                     <lightning-combobox
+                      label="Country of residence"
+                         name="residence"
+                         value={residence}
+                         options={residenceOptions}
+                         onchange={handleResidenceChange}>
+                     </lightning-combobox>
+                 </div>
+             
+
+
+                <div class="slds-p-bottom--small">
+                     <lightning-combobox
+                      label="As a United Kingdom resident, are you planning to?"
+                         name="planningTo"
+                         value={planningTo}
+                         options={planningOptions}
+                         onchange={handlePlanningChange}>
+                     </lightning-combobox>
+                 </div>
+             
+
+             <div class="slds-p-bottom--small">
+                     <lightning-combobox
+                      label="Country you are planning to work internationally"
+                         name="workCountry"
+                         value={workCountry}
+                         options={workingCountryOptions}
+                         onchange={handleWorkCountryChange}>
+                     </lightning-combobox>
+                 </div>
+             
+
+             <div class="slds-p-bottom--small">
+                     <lightning-input
+                      label="Date of birth"
+                         type="date"
+                         name="birthdate"
+                         value={birthdate}
+                         onchange={handleBirthdateChange}>
+                     </lightning-input>
+                 </div>
+
+                    <!-- Privacy Notice -->
+                    <div class="slds-p-top_medium privacy-notice">
+                        <div class="Inner-notice">
+                            <lightning-icon icon-name="utility:lock" size="x-small" class="slds-p-right_x-small"></lightning-icon>
+                            Your information will be managed securely. 
+                            <a href="#" onclick={handlePrivacyClick}>Click here</a> to see our privacy statement
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div class="slds-p-around_medium slds-grid slds-grid_align-spread">
+            <lightning-button 
+                label="Cancel" 
+                variant="neutral">
+            </lightning-button>
+            <lightning-button 
+                label="Check" 
+                variant="brand"
+                onclick={handleCheck}>
+            </lightning-button>
+        </div>
+    </div>
+</template>

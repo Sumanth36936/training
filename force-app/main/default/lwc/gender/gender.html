@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Gender Dropdown" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="gender"
+                label="Gender"
+                value={defaultGender}
+                placeholder="-- Select Gender --"
+                options={genderOptions}
+                onchange={handleGenderChange}>
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

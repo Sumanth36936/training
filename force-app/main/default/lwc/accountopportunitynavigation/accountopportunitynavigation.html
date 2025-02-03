@@ -1,0 +1,47 @@
+<!--
+ ******************************************************************************************
+ * @Name of the LWC    :  relatedopportunity.html
+ * @ Description       :  used to display accounts.
+ * @ Author            :  Sumanth
+ * @ Created Date      :  30-01-2024
+ ******************************************************************************************
+ * @ Last Modified By         :  Sumanth
+ * @ Last Modified On         :  31-01-2024
+ * @ Modification Description : Added extra functionality
+ ******************************************************************************************
+-->
+<template>
+    <lightning-card title="Account List" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <!-- Datatable with a custom button in each row -->
+            <lightning-datatable
+                key-field="Id"
+                data={paginatedAccounts}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}
+            ></lightning-datatable>
+        </div>
+    </lightning-card>
+
+    <div class="slds-m-top_medium slds-grid slds-grid_align-center">
+        <lightning-button
+            label="Previous"
+            onclick={previousPage}
+            disabled={isFirstPage}
+            class="slds-m-right_x-small">
+        </lightning-button>
+        <span class="slds-align-middle slds-m-horizontal_medium">
+            Page {currentPage} of {totalPages}
+        </span>
+        <lightning-button
+            label="Next"
+            onclick={nextPage}
+            disabled={isLastPage}
+            class="slds-m-left_x-small">
+        </lightning-button>
+    </div>
+    </template>
+ 
+   
+ 
