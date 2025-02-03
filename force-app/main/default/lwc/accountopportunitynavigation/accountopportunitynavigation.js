@@ -98,7 +98,7 @@ export default class AccountDatatable extends NavigationMixin(LightningElement) 
  
  
     handleRowAction(event) {
-        // Get row data and action details from the event
+        // Get row data and action details from the eve
        const row = event.detail.row;
         const action = event.detail.action;
  
